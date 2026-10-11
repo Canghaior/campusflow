@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CampusFlow 学习进度：查看 12 周路线、当前任务、验收要求和学习记录。">
+  <title>CampusFlow · 我的学习进度</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script defer src="/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="/" aria-label="CampusFlow 学习进度首页"><span class="brand-mark">C<span>F</span></span><span>CampusFlow<small>学习与求职</small></span></a>
+      <div class="nav-caption">我的工作区</div>
+      <nav aria-label="页面导航">
+        <button class="nav-item selected" data-view="overview"><span aria-hidden="true">◫</span>学习总览</button>
+        <button class="nav-item" data-view="journal"><span aria-hidden="true">▤</span>学习记录<span id="journal-count" class="nav-count">0</span></button>
+        <button class="nav-item" data-view="schedule"><span aria-hidden="true">◷</span>每周安排</button>
+      </nav>
+      <div class="sidebar-note"><span class="note-line"></span><strong>先理解，再实现</strong><p>每次只推进一个小任务。<br>用实际成果确认掌握程度。</p></div>
+      <div class="sidebar-bottom"><span class="avatar">我</span><span>我的 Agent 学习计划<small>12 周目标 · 按掌握情况推进</small></span></div>
+    </aside>
+    <main>
+      <header class="topbar"><div class="breadcrumb">我的工作区<span>/</span><span id="view-label">学习总览</span></div><div class="top-actions"><span id="sync-state" class="sync-state">正在读取进度</span><button class="button subtle" id="refresh-button">刷新</button></div></header>
+      <div id="error-banner" class="error-banner" role="alert" hidden></div>
+      <div class="page-content">
+        <section id="view-overview" class="view">
+          <div class="page-heading"><div><div class="eyebrow">CAMPUSFLOW / LEARNING</div><h1>我的学习进度</h1><p>把每一次练习，变成能独立完成的能力。</p></div><button class="button primary" data-action="record">记录本次学习</button></div>
+          <section class="current-panel" aria-labelledby="current-title"><div class="current-content"><div class="current-label"><span class="light-badge" id="current-week">W1</span>当前任务<span class="current-status">进行中</span></div><h2 id="current-title">正在读取当前任务</h2><p id="next-step">加载学习进度文件后显示下一步。</p><div class="current-bottom"><span id="current-task-id"></span><button class="button on-blue" id="current-detail">查看验收要求</button></div></div><div class="current-visual"><div class="gate-ring" role="img" id="gate-ring" aria-label="阶段验收进度"><div><strong id="gates-number">0<span>/ 4</span></strong><span>阶段已验收</span></div></div><small>完成以实际验收为准</small></div></section>
+          <div class="summary-grid"><div class="summary"><span class="summary-icon blue" aria-hidden="true">✓</span><div><div class="summary-label">当前周已验收步骤</div><strong id="task-count">—</strong><small>基于当前任务清单</small></div></div><div class="summary"><span class="summary-icon amber" aria-hidden="true">▤</span><div><div class="summary-label">待 Review 的学习记录</div><strong id="pending-count">0 <span>条</span></strong><small>记录后由导师核对成果</small></div></div><div class="summary"><span class="summary-icon teal" aria-hidden="true">◷</span><div><div class="summary-label">累计记录的学习用时</div><strong id="time-count">—</strong><small>按你填写的用时累计</small></div></div></div>
+          <section class="panel roadmap-panel"><div class="section-heading"><div><h2>12 周学习路线</h2><p>点击周次，查看目标与完成标准</p></div><span class="quiet-tag">按验收推进</span></div><div id="roadmap" class="roadmap" aria-label="12 周学习阶段"></div></section>
+          <div class="workspace-grid"><section class="panel task-panel" id="task-panel"><div class="section-heading"><div><div id="selected-week-label" class="eyebrow">W1 / 当前阶段</div><h2 id="selected-week-title">工程基础与模型调用</h2></div><span id="selected-week-status" class="status-pill active">进行中</span></div><p id="week-topics" class="week-topics"></p><div id="week-outcome" class="outcome"></div><div id="task-list" class="task-list"></div><div id="week-plan-detail"></div></section><aside class="right-column"><section class="panel"><div class="section-heading"><h2>四次阶段验收</h2><span id="gates-caption" class="secondary">0 / 4</span></div><div id="gate-list" class="gate-list"></div></section><section class="panel mentor-panel"><div class="mentor-label">导师进度记录</div><h3>已经验证的成果</h3><p id="verified"></p><h3>接下来需要掌握</h3><p id="needs"></p><button class="text-button" data-document="progress">查看完整进度记录</button></section></aside></div>
+        </section>
+        <section id="view-journal" class="view" hidden><div class="page-heading"><div><div class="eyebrow">PRACTICE / REVIEW</div><h1>学习记录</h1><p>记录做了什么、花了多久，以及需要导师帮助的地方。</p></div><button class="button primary" data-action="record">记录本次学习</button></div><div class="journal-info">学习记录保存后会标记为待 Review。导师核对实际成果并验收后，更新主线进度。</div><div id="journal-list"></div><section class="panel mentor-history"><div class="section-heading"><h2>导师已记录的学习过程</h2></div><div id="mentor-history"></div></section></section>
+        <section id="view-schedule" class="view" hidden><div class="page-heading"><div><div class="eyebrow">WEEKLY / BALANCE</div><h1>每周安排</h1><p>主项目、算法、计算机基础和求职准备一起推进。</p></div><span class="quiet-tag">暂定 12 小时 / 周</span></div><section class="panel budget-panel"><div class="section-heading"><h2>每周时间分配</h2></div><div id="budget-bar" class="budget-bar" role="img" aria-label="每周计划学习时间分配"></div><div id="budget-list" class="budget-list"></div></section><section class="panel fundamentals-panel"><div class="section-heading"><h2>算法与计算机基础</h2></div><div id="fundamentals-list" class="fundamentals-list"></div></section><section class="panel"><div class="section-heading"><h2>求职准备时间线</h2></div><div id="job-list" class="job-list"></div></section></section>
+        <footer><span>跟随项目进度更新<span class="footer-separator">·</span><span id="updated-label"></span></span><button class="text-button" data-document="plan">查看原学习计划</button></footer>
+      </div>
+    </main>
+  </div>
+  <dialog id="record-dialog" class="record-dialog"><form id="record-form"><div class="dialog-heading"><div><div class="eyebrow">LEARNING LOG</div><h2>记录本次学习</h2></div><button class="icon-button" type="button" data-close="record-dialog" aria-label="关闭记录窗口">×</button></div><p class="dialog-intro">写下自己的理解和成果，方便下次继续，也方便导师 Review。</p><label class="field">对应任务<select id="record-task" name="taskId" required></select></label><div class="form-row"><label class="field">学习日期<input type="date" id="record-date" name="date" required></label><label class="field">学习用时（分钟）<input type="number" id="record-minutes" name="minutes" min="0" max="1440" step="1" value="30" required></label></div><label class="field">我学到了什么<textarea name="note" id="record-note" rows="4" maxlength="4000" placeholder="用自己的话说明概念、操作或设计思路。" required></textarea></label><label class="field">成果或待解决问题<span class="optional">选填</span><textarea name="evidence" id="record-evidence" rows="3" maxlength="2000" placeholder="例如：运行结果、测试命令、遇到的报错或需要 Review 的文件。"></textarea></label><div id="form-error" class="form-error" role="alert" hidden></div><div class="dialog-footer"><span>保存后等待导师 Review</span><div><button class="button" type="button" data-close="record-dialog">取消</button><button class="button primary" type="submit" id="save-button">保存学习记录</button></div></div></form></dialog>
+  <dialog id="document-dialog" class="document-dialog"><div class="dialog-heading"><h2 id="document-title">学习进度记录</h2><button class="icon-button" data-close="document-dialog" aria-label="关闭文档窗口">×</button></div><pre id="document-content"></pre></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
