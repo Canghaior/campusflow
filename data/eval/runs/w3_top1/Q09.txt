@@ -1,0 +1,41 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20261015014023
+用户名: HARDEN\lijin
+RunAs 用户: HARDEN\lijin
+配置名称: 
+计算机: HARDEN (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+进程 ID: 36664
+PSVersion: 5.1.26100.9711
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9711
+BuildVersion: 10.0.26100.9711
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+向量检索候选数：1
+候选存在不代表依据充分，回答仍需对照正文核验。
+正在发起一次回答模型请求……
+
+模型回答：
+1. **退课申请由谁审核**：由任课教师审核 [S1]。
+
+2. **审核未通过后能否再次申请**：当前资料无法确认。现有证据只说明退课申请由任课教师审核、审核通过后系统将课程状态改为“已退课”，以及提交申请不代表审核通过 [S1]，未规定审核未通过后的再次申请问题。
+
+引用编号检查通过；仍需检查原文是否支持结论。
+
+本次证据来源：
+
+[S1] drop_course_policy.md，第2条：审核与生效
+引用状态：回答已引用
+检索相似度：0.7252
+来源路径：data/public_docs/drop_course_policy.md
+块编号：data/public_docs/drop_course_policy.md#chunk-2
+进程退出码：0
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20261015014027
+**********************

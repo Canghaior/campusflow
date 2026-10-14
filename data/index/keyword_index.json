@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "index_type": "keyword_inverted",
+  "keywords": [
+    "提交",
+    "时间",
+    "18:00",
+    "审核",
+    "任课教师",
+    "生效",
+    "课程编号",
+    "退课原因"
+  ],
+  "chunking_rule": "按行首二级标题切分，保留公共前言",
+  "chunks": {
+    "data/public_docs/drop_course_policy.md#chunk-1": {
+      "content": "# CampusFlow 模拟退课规则\n\n> 本文完全虚构，仅用于 CampusFlow 学习与测试，不代表真实学校规定。\n\n版本：1.0\n\n## 第1条：申请提交时间\n\n退课申请须在开学后第2周周五18:00前提交。",
+      "metadata": {
+        "source": "data/public_docs/drop_course_policy.md",
+        "filename": "drop_course_policy.md",
+        "section": "第1条：申请提交时间",
+        "chunk_id": "data/public_docs/drop_course_policy.md#chunk-1"
+      }
+    },
+    "data/public_docs/drop_course_policy.md#chunk-2": {
+      "content": "# CampusFlow 模拟退课规则\n\n> 本文完全虚构，仅用于 CampusFlow 学习与测试，不代表真实学校规定。\n\n版本：1.0\n\n## 第2条：审核与生效\n\n退课申请由任课教师审核。\n审核通过后，系统将课程状态改为“已退课”。\n提交申请不代表审核通过。",
+      "metadata": {
+        "source": "data/public_docs/drop_course_policy.md",
+        "filename": "drop_course_policy.md",
+        "section": "第2条：审核与生效",
+        "chunk_id": "data/public_docs/drop_course_policy.md#chunk-2"
+      }
+    },
+    "data/public_docs/drop_course_policy.md#chunk-3": {
+      "content": "# CampusFlow 模拟退课规则\n\n> 本文完全虚构，仅用于 CampusFlow 学习与测试，不代表真实学校规定。\n\n版本：1.0\n\n## 第3条：申请信息\n\n退课申请应包含课程编号和退课原因。",
+      "metadata": {
+        "source": "data/public_docs/drop_course_policy.md",
+        "filename": "drop_course_policy.md",
+        "section": "第3条：申请信息",
+        "chunk_id": "data/public_docs/drop_course_policy.md#chunk-3"
+      }
+    }
+  },
+  "postings": {
+    "提交": [
+      "data/public_docs/drop_course_policy.md#chunk-1",
+      "data/public_docs/drop_course_policy.md#chunk-2"
+    ],
+    "时间": [
+      "data/public_docs/drop_course_policy.md#chunk-1"
+    ],
+    "18:00": [
+      "data/public_docs/drop_course_policy.md#chunk-1"
+    ],
+    "审核": [
+      "data/public_docs/drop_course_policy.md#chunk-2"
+    ],
+    "任课教师": [
+      "data/public_docs/drop_course_policy.md#chunk-2"
+    ],
+    "生效": [
+      "data/public_docs/drop_course_policy.md#chunk-2"
+    ],
+    "课程编号": [
+      "data/public_docs/drop_course_policy.md#chunk-3"
+    ],
+    "退课原因": [
+      "data/public_docs/drop_course_policy.md#chunk-3"
+    ]
+  }
+}
